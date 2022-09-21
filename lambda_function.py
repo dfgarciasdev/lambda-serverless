@@ -13,11 +13,11 @@ class DynamoAccessor:
         self.table = dynamo_db.Table(dynamo_table)
 
     def get_data_from_dynamo(self, cc):
-        response = self.table.query(KeyConditionExpression=Key('cc').eq(cc))
+        response = self.table.query(KeyConditionExpression=Key('dni').eq(cc))
         return response["Items"][0] if any(response["Items"]) else None
 
 def lambda_handler(event, context):
     dynamo_backend = DynamoAccessor(DYNAMO_BD)
-    db_element = dynamo_backend.get_data_from_dynamo(event['cc'])
+    db_element = dynamo_backend.get_data_from_dynamo(event['dni'])
     return db_element
 
