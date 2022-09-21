@@ -5,7 +5,7 @@ Resources:
   S3ArtifactsBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub codepipeline-artefactos-${AWS::AccountId}-${AWS::Region}
+      BucketName: !Sub davidgarcia-codepipeline-artefactos-${AWS::AccountId}-${AWS::Region}
 
   S3ArtifactsBucketPolicy:
     Type: AWS::S3::BucketPolicy
@@ -246,28 +246,28 @@ Outputs:
   PipelineRole:
     Value: !GetAtt CodePipelineRole.Arn
     Export:
-      Name: PipelineRole
+      Name: PipelineRoleDavidGarcia
   CodeBuildRole:
     Value: !GetAtt CodeBuildRole.Arn
     Export:
-      Name: CodeBuildRole
+      Name: CodeBuildRoleDavidGarcia
   S3ArtifactsBucket:
     Value: !Ref S3ArtifactsBucket
     Export:
-      Name: S3ArtifactsBucket
+      Name: S3ArtifactsBucketDavidGarcia
   LambdaPolicyDynamo:
     Value: !Ref LambdaPolicyDynamo
     Export:
-        Name: LambdaPolicyDynamo
+        Name: LambdaPolicyDynamoDavidGarcia
   LambdaPolicyEC2:
     Value: !Ref LambdaPolicyEC2
     Export:
-        Name: LambdaPolicyEC2
+        Name: LambdaPolicyEC2DavidGarcia
   LambdaPolicyCW:
     Value: !Ref LambdaPolicyCW
     Export:
-        Name: LambdaPolicyCW
+        Name: LambdaPolicyCWDavidGarcia
   LambdaPolicyS3:
     Value: !Ref LambdaPolicyS3
     Export:
-        Name: LambdaPolicyS3        
+        Name: LambdaPolicyS3DavidGarcia        

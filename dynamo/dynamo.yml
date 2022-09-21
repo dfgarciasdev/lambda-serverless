@@ -23,8 +23,8 @@ Outputs:
   DynamoName:
       Value: !Ref DynamoLab
       Export:
-        Name: DynamoLab
+        Name: DynamoLabDavidGarcia
   DynamoNameArn:
       Value: !GetAtt DynamoLab.Arn
       Export:
-        Name: DynamoLabArn
+        Name: DynamoLabDavidGarciaArn
